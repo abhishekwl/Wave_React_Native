@@ -56,8 +56,9 @@ class Splash extends React.PureComponent {
                 name: responseBody.name,
                 authority_id: responseBody.authority_id,
                 authority_name: responseBody.authority_name,
+                email: responseBody.email,
                 phone: responseBody.phone,
-                photo: responseBody.photo
+                photo: (responseBody.photo===null||responseBody.photo===undefined||responseBody.photo==='')?null:responseBody.photo
             };
             this.props.navigation.navigate('Main', {user});
         }).catch(err => this.notifyMessage(err.toString()));
