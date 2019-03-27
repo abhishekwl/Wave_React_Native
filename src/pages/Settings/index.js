@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StyleProvider, Container, Content, Text, Thumbnail } from 'native-base';
+import LottieView from 'lottie-react-native';
 //LOCAL
 import config from '../../config';
 import getTheme from '../../../native-base-theme/components';
@@ -24,12 +25,13 @@ class Settings extends React.Component {
                         <View style={{flexDirection: 'row',justifyContent:'space-between'}}>
                             <View>
                                 <Text style={titleTextStyle}>{'Settings'}</Text>
-                                <Text style={subtitleTextStyle}>{ 'Welcome '+user.name+'!' }</Text>
+                                <Text style={subtitleTextStyle}>{ 'Go ahead, tweak it :P' }</Text>
                             </View>
-                            <Thumbnail
-                                large
-                                source={{uri: user.photo}}
-                                style={thumbnailStyle}
+                            <LottieView
+                                source={require('../../assets/lottie/settings.json')}
+                                style={{height: 96,width: 96}}
+                                autoPlay
+                                loop
                             />
                         </View>
                     </Content>

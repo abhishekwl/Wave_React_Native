@@ -67,6 +67,14 @@ class Home extends React.Component {
                         </Card>
 
                         <Text style={[titleTextStyle,{marginTop: 16}]}>{'Notifications'}</Text>
+
+                        <LottieView
+                            speed={0.5}
+                            source={require('../../assets/lottie/box.json')}
+                            autoPlay
+                            loop
+                            style={{height: 164, width: 256,alignSelf: 'center'}}
+                        />
                     </Content>
                 </Container>
             </StyleProvider>
@@ -77,9 +85,7 @@ class Home extends React.Component {
 const styles = StyleSheet.create({
     contentStyle: {
         justifyContent: 'space-around',
-        paddingLeft: 16,
-        paddingRight: 16,
-        paddingTop: 16
+        padding: 16
     },
     titleTextStyle: {
         fontFamily: 'sans-serif-light',

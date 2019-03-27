@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { StyleProvider, Container, Content, Text, Thumbnail } from 'native-base';
+import { StyleProvider, Container, Content, Text, Thumbnail, Card, CardItem, Left } from 'native-base';
+import LottieView from 'lottie-react-native';
 //LOCAL
 import config from '../../config';
 import getTheme from '../../../native-base-theme/components';
 import commonColor from '../../../native-base-theme/variables/commonColor';
+import ServiceListItem from '../../components/ServiceListItem';
 
 class Services extends React.Component {
     render() {
@@ -24,14 +26,55 @@ class Services extends React.Component {
                         <View style={{flexDirection: 'row',justifyContent:'space-between'}}>
                             <View>
                                 <Text style={titleTextStyle}>{'Services'}</Text>
-                                <Text style={subtitleTextStyle}>{ 'Welcome '+user.name+'!' }</Text>
+                                <Text style={subtitleTextStyle}>{ 'Make your life easier with us' }</Text>
                             </View>
-                            <Thumbnail
-                                large
-                                source={{uri: user.photo}}
-                                style={thumbnailStyle}
+                            <LottieView
+                                source={require('../../assets/lottie/service.json')}
+                                style={{height: 96,width: 96}}
+                                autoPlay
+                                loop
                             />
                         </View>
+
+                        <Text style={[titleTextStyle,{marginTop: 8}]}>{'Events'}</Text>
+
+                        <ServiceListItem
+                            title={'Goodie Bag Collection'}
+                            image={require('../../assets/images/rainbow_parachute.jpg')}
+                            onPress={ ()=>{} }
+                            imageStyle={{backgroundColor: '#398860'}}
+                        />
+
+                        <Text style={[titleTextStyle,{marginTop: 8}]}>{'Services'}</Text>
+
+                        <ServiceListItem
+                            title={'Hive and Arc Mobile Access'}
+                            image={require('../../assets/images/id_card.png')}
+                            onPress={ ()=>{} }
+                            imageStyle={{backgroundColor: '#c792f5'}}
+                        />
+
+
+                        <ServiceListItem
+                            title={'Lee Wee Nam Mobile Access'}
+                            image={require('../../assets/images/books.png')}
+                            onPress={ ()=>{} }
+                            imageStyle={{backgroundColor: '#f5a623'}}
+                        />
+
+                        <ServiceListItem
+                            title={'Sleeping Pod Booking'}
+                            image={require('../../assets/images/bed.png')}
+                            onPress={ ()=>{} }
+                            imageStyle={{backgroundColor: '#f5a623'}}
+                        />
+
+                        <ServiceListItem
+                            title={'Hall Access'}
+                            image={require('../../assets/images/house.png')}
+                            onPress={ ()=>{} }
+                            imageStyle={{backgroundColor: '#5ac8fa'}}
+                        />
                     </Content>
                 </Container>
             </StyleProvider>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StyleProvider, Container, Content, Text, Thumbnail } from 'native-base';
+import LottieView from 'lottie-react-native'
 //LOCAL
 import config from '../../config';
 import getTheme from '../../../native-base-theme/components';
@@ -23,15 +24,17 @@ class Friends extends React.Component {
 
                         <View style={{flexDirection: 'row',justifyContent:'space-between'}}>
                             <View>
-                                <Text style={titleTextStyle}>{'Friends'}</Text>
-                                <Text style={subtitleTextStyle}>{ 'Welcome '+user.name+'!' }</Text>
+                                <Text style={titleTextStyle}>{'People'}</Text>
+                                <Text style={subtitleTextStyle}>{ ' Check out what your friends\n are doing' }</Text>
                             </View>
-                            <Thumbnail
-                                large
-                                source={{uri: user.photo}}
-                                style={thumbnailStyle}
+                            <LottieView
+                                source={require('../../assets/lottie/friends.json')}
+                                style={{height: 96,width: 96}}
+                                autoPlay
+                                loop
                             />
                         </View>
+
                     </Content>
                 </Container>
             </StyleProvider>
@@ -42,9 +45,7 @@ class Friends extends React.Component {
 const styles = StyleSheet.create({
     contentStyle: {
         justifyContent: 'space-around',
-        paddingLeft: 16,
-        paddingRight: 16,
-        paddingTop: 16
+        padding: 16
     },
     titleTextStyle: {
         fontFamily: 'Roboto_Thin',
